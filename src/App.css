@@ -1,0 +1,44 @@
+#root {
+  margin: 0 auto;
+  min-height: 100vh;
+}
+.ant-timeline-item-tail {
+  background-color: #413d65  !important; /* Change tail color */
+}
+.anticon {
+  color: #E2306D;
+}
+.ant-timeline-item-head-custom {
+  background: transparent!important;
+}
+
+::placeholder {
+  color: #f80063!important;
+  font-style: italic;
+  opacity: 0.85;
+}
+::-webkit-input-placeholder {
+  color: #f80063!important;
+  font-style: italic;
+  opacity: 0.85;
+}
+::-moz-placeholder {
+  color: #f80063!important;
+  font-style: italic;
+  opacity: 0.85;
+}
+:-ms-input-placeholder {
+  color: #f80063!important;
+  font-style: italic;
+  opacity: 0.85;
+}
+::-ms-input-placeholder {
+  color: #f80063!important;
+  font-style: italic;
+  opacity: 0.85;
+}
+::placeholder {
+  color: #f80063!important;
+  font-style: italic;
+  opacity: 0.85;
+}
