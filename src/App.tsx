@@ -80,8 +80,12 @@ const Answer = styled.div`
     text-align: left;
     position: relative;
 
-    h3 {
+    h1 {
       margin-top: 10px!important;
+      font-size: 1.5rem;
+    }
+    h2 {
+      font-size: 1.25rem;
     }
 
     &:before {
@@ -123,21 +127,22 @@ const App: React.FC = () => {
     }
     setItems((prevItems) => [...prevItems, newQuestion]);
    
-    setTimeout(() => {
+    //setTimeout(() => {
       getResponse(inputValue);
-    }, 1000);
+      //runFlowAxios(inputValue);
+      //runFlow(inputValue);
+    //}, 1000);
   };
 
-  const getResponse = async (newQuestion: string) => {
+  const getResponse = async (input_value: string) => {
     try {
-      console.log("newQuestion = ", newQuestion);
-      const response = await axios.get("https://official-joke-api.appspot.com/random_joke");
-
-      const htmlContent = `
-        <h3>${response.data.type}</h3>
-        <p><i>${response.data.setup}</i></p>
-        <p>${response.data.punchline}</p>
-      `;
+      const baseURL = import.meta.env.VITE_APP_BASE_URL;
+      const endPoint = '/api';
+      const body = {
+        input_value
+      }
+      const response = await axios.post(`${baseURL}${endPoint}`, body);
+      const htmlContent = response.data.html;
       const newAnswer = {
         color: '#d6256d',
         dot: <CheckCircleTwoTone twoToneColor="#d6256d" />,

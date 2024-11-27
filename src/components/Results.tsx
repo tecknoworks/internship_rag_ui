@@ -12,7 +12,7 @@ const TitleIntro = styled.div`
     padding: 34px 34px;
     color: #fff;
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     color: #fff;
     text-align: center;
     font-family: "Basier Circle Bold", Sans-serif;
@@ -71,7 +71,7 @@ export const Results: React.FC<Props> = ({
                             cursor={true}
                             repeat={Infinity}
                             style={{ 
-                                fontSize: '3em', 
+                                fontSize: '2em', 
                                 fontWeight: 'bold', 
                                 textAlign: 'center',
                                 width: '100%',
