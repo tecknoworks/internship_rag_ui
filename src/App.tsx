@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css'
 import styled from 'styled-components';
 import axios from "axios";
@@ -114,6 +114,13 @@ const App: React.FC = () => {
   const [items, setItems] = useState<Item[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
+  useEffect(() => {
+    setTimeout(() => {
+      window.scrollTo({top: document.body.scrollHeight, behavior: "smooth"});
+    }, 200);
+  }, [items]);
+ 
+
   const handleAddMessage = (inputValue: string) => {
     setIsLoading(true);
     const newQuestion = {
@@ -126,12 +133,7 @@ const App: React.FC = () => {
       ),
     }
     setItems((prevItems) => [...prevItems, newQuestion]);
-   
-    //setTimeout(() => {
-      getResponse(inputValue);
-      //runFlowAxios(inputValue);
-      //runFlow(inputValue);
-    //}, 1000);
+    getResponse(inputValue);
   };
 
   const getResponse = async (input_value: string) => {
@@ -156,7 +158,7 @@ const App: React.FC = () => {
       }
       setItems((prevItems) => [...prevItems, newAnswer]);
       setIsLoading(false);
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (err: any) {
       const htmlContent = `
         <h3>Error: ${err.message}!</h3>
