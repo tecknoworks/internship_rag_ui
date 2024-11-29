@@ -37,7 +37,7 @@ export const Results: React.FC<Props> = ({
                     vertical={true}
                     justify="center"
                     style={{ 
-                        height: '70vh'
+                        height: '68vh'
                     }}
                 >
                     <TitleIntro>

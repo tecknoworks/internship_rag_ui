@@ -24,17 +24,17 @@ const ContainerResults = styled.div`
 const ContentResults = styled.div`
   border: 2px solid #413c65;
   color: #fff;
-  width: 50%;
+  width: 56%;
   margin: 24px auto;
   padding: 24px;
   border-radius: 8px;
   box-shadow: 2px 2px 18px #413d65;
-  min-height: 82vh;
+  min-height: 76vh;
 `;
 const ContainerMessage = styled.div`
-  background: #242038;
+  backdrop-filter: blur(10px);
   color: #fff;
-  height: 102px;
+  height: 106px;
   position: sticky;
   bottom: 0;
   z-index: 999;
@@ -46,7 +46,7 @@ const ContentMessage = styled.div`
   color: #fff;
   width: 50%;
   padding: 16px 24px;
-  margin: 0 auto;
+  margin: 16px auto;
 `;
 const Question = styled.div`
     padding: 8px 50px 8px 8px;
